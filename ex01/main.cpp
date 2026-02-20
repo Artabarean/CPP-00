@@ -6,40 +6,29 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:21:39 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/18 15:53:35 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/20 13:01:37 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
-void    addcontact()
-{
-    std::string first_name;
-    std::string last_name;
-    std::string nickname;
-    std::string phone_number;
-    std::string darkest_secret;
-
-    getline(std::cin, first_name);
-    if (first_name[0] == '\0')
-        std::cout <<
-
-}
+size_t PhoneBook::max_contacts = 8;
 
 int	main(void)
 {
 	std::string comm;
-
+    PhoneBook PhoneBook;
+    PhoneBook.contact_index = 0;
     while (1)
     {
-        getline(std::cin, comm);
+        if (!getline(std::cin, comm))
+            return (1);
         if (comm == "EXIT")
             break;
         else if (comm == "ADD")
-            add_contact();
+            PhoneBook.add_contact();
         else if (comm == "SEARCH")
-            search_contact();
-        else
-            error_message("command");
+            PhoneBook.search_contact();
     }
+    return (0);
 }

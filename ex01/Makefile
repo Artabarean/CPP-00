@@ -6,27 +6,31 @@
 #    By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 14:42:54 by atabarea          #+#    #+#              #
-#    Updated: 2026/02/18 14:45:22 by atabarea         ###   ########.fr        #
+#    Updated: 2026/02/20 13:58:47 by atabarea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= phonebook
+NAME		= PhoneBook
 CXX			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-INCLUDE	= phonebook.hpp
+INCLUDE	= -I PhoneBook.hpp
 
-SRC		= main.cpp
+SRC		=	\
+	main.cpp \
+	error_message.cpp \
+	PhoneBook.cpp \
+	Contact.cpp 
 
 OBJS	= $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)  
+	$(CXX) $(CPPFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)  
 
 %.o: %.cpp
-	$(CXX) $(CPPFLAGS) -c $< -o $@
+	$(CXX) $(CPPFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

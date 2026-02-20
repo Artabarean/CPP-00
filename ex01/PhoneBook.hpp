@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_message.cpp                                  :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 10:35:49 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/20 14:12:50 by atabarea         ###   ########.fr       */
+/*   Created: 2026/02/18 14:24:30 by atabarea          #+#    #+#             */
+/*   Updated: 2026/02/20 12:47:56 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+# include <cstdlib>
+# include <string>
+# include <iostream>
+# include <cstdio>
+# include "Contact.hpp"
 
-void	error_message(std::string mssg)
-{
-	std::cout << "Error: invalid " << mssg << std::endl;
-}
+class PhoneBook {
+	public:
+		PhoneBook();	//constructor
+		~PhoneBook();	//destructor
+		void	add_contact();
+		void	search_contact();
+		static size_t	max_contacts;
+		size_t	contact_index;
+	private:
+		Contact contacts[8];
+		
+};
+
+#endif
