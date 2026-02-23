@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 12:30:34 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/20 14:13:05 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/23 14:10:46 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,41 +21,57 @@ std::string get_input(std::string prompt)
 
     while (1)
     {
-        if (!getline(std::cin, input))
+        if (!std::getline(std::cin, input))
             return "";
         if (!input.empty())
-            break;
+		{
+			if (prompt == "phone number" && input.length() == 9)
+            	break;
+			if (prompt != "phone number")
+				break;
+		}
         error_message(prompt);
     }
     return (input);
 }
 
-void Contact::set_info(std::string contact_info)
+bool	Contact::set_info(std::string contact_info)
 {
 	std::string input = get_input(contact_info);
-	if (contact_info == "first_name")
+	if (input.empty())
+		return (false);
+	if (contact_info == "first name")
 		this->first_name = input;
-	if (contact_info == "last_name")
+	else if (contact_info == "last name")
 		this->last_name = input;
-	if (contact_info == "nickname")
+	else if (contact_info == "nickname")
 		this->nickname = input;
-	if (contact_info == "phone_number")
+	else if (contact_info == "phone number")
 		this->phone_number = input;
-	if (contact_info == "darkest_secret")
+	else if (contact_info == "darkest secret")
 		this->darkest_secret = input;
+	return (true);
+}
+
+void	Contact::show_contact_info(void)
+{
+	while (1)
+	{
+		
+	}
 }
 
 std::string Contact::get_info(std::string contact_info)
 {
-    if (contact_info == "first_name")
+    if (contact_info == "first name")
 		return (this->first_name);
-	if (contact_info == "last_name")
+	if (contact_info == "last name")
 		return (this->last_name);
 	if (contact_info == "nickname")
 		return (this->nickname);
-	if (contact_info == "phone_number")
+	if (contact_info == "phone number")
 		return (this->phone_number);
-	if (contact_info == "darkest_secret")
+	if (contact_info == "darkest secret")
 		return (this->darkest_secret);
 	return ("NONE");
 }

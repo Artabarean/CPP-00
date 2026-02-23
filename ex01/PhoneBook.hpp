@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:24:30 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/20 12:47:56 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/23 12:09:56 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,20 @@
 # include <string>
 # include <iostream>
 # include <cstdio>
+# include <iomanip>
 # include "Contact.hpp"
 
 class PhoneBook {
 	public:
-		PhoneBook();	//constructor
-		~PhoneBook();	//destructor
-		void	add_contact();
-		void	search_contact();
+		PhoneBook();
+		~PhoneBook();
+		bool	add_contact(void);
+		bool	search_contact(void);
+		void	display_contacts(Contact contacts[8]);
 		static size_t	max_contacts;
 		size_t	contact_index;
 	private:
-		Contact contacts[8];
-		
+		Contact contacts[8];	
 };
 
 #endif

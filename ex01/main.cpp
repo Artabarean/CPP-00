@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:21:39 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/20 13:01:37 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/23 14:10:56 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,25 @@ int	main(void)
 {
 	std::string comm;
     PhoneBook PhoneBook;
+
     PhoneBook.contact_index = 0;
     while (1)
     {
-        if (!getline(std::cin, comm))
+        std::cout << "Please enter a command: ";
+        if (!std::getline(std::cin, comm))
             return (1);
         if (comm == "EXIT")
             break;
         else if (comm == "ADD")
-            PhoneBook.add_contact();
+        {
+            if (!PhoneBook.add_contact())
+                break;
+        }
         else if (comm == "SEARCH")
-            PhoneBook.search_contact();
+        {
+            if (!PhoneBook.search_contact())
+                break;
+        }
     }
     return (0);
 }
