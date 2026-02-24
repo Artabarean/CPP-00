@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 12:30:34 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/23 14:10:46 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/24 11:07:03 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ std::string get_input(std::string prompt)
             return "";
         if (!input.empty())
 		{
-			if (prompt == "phone number" && input.length() == 9)
+			if (prompt == "phone number" && input.length() <= 9)
             	break;
 			if (prompt != "phone number")
 				break;
@@ -55,10 +55,13 @@ bool	Contact::set_info(std::string contact_info)
 
 void	Contact::show_contact_info(void)
 {
-	while (1)
-	{
-		
-	}
+	std::cout << "Contact information:\n"
+		<< "first name: " << this->first_name
+		<< "\nlast name: " << this->last_name
+		<< "\nnickname: " << this->nickname
+		<< "\nphone number: " << this->phone_number
+		<< "\ndarkest secret: " << this->darkest_secret
+		<< std::endl;
 }
 
 std::string Contact::get_info(std::string contact_info)

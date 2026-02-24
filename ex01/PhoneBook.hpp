@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:24:30 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/23 12:09:56 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/24 10:44:43 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ class PhoneBook {
 	private:
 		Contact contacts[8];	
 };
+
+bool	check_alpha(std::string str);
 
 #endif

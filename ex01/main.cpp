@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 14:21:39 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/23 14:10:56 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/24 14:15:46 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
     PhoneBook.contact_index = 0;
     while (1)
     {
-        std::cout << "Please enter a command: ";
+        std::cout << "Please enter a command:";
         if (!std::getline(std::cin, comm))
             return (1);
         if (comm == "EXIT")
