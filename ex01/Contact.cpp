@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 12:30:34 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/25 11:45:59 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/25 11:56:04 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,19 +95,6 @@ void	Contact::show_contact_info(void)
 
 std::string Contact::get_info(std::string contact_info)
 {
-    // if (contact_info == "first name")
-	// 	return (this->first_name);
-	// if (contact_info == "last name")
-	// 	return (this->last_name);
-	// if (contact_info == "nickname")
-	// 	return (this->nickname);
-	// if (contact_info == "phone number")
-	// 	return (this->phone_number);
-	// if (contact_info == "darkest secret")
-	// 	return (this->darkest_secret);
-	// return ("NONE");
-	
-
 	char c = contact_info[0];
 
 	switch(c)
