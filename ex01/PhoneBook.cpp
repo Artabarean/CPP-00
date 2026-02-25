@@ -6,14 +6,14 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 11:29:49 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/25 11:31:10 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/25 12:31:45 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() {};
-PhoneBook::~PhoneBook() {};
+PhoneBook::PhoneBook() {}
+PhoneBook::~PhoneBook() {}
 
 bool	PhoneBook::add_contact(void)
 {

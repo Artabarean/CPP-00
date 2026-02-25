@@ -6,14 +6,14 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 12:30:34 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/25 11:56:04 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/25 12:36:41 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact(){};
-Contact::~Contact(){};
+Contact::Contact(){}
+Contact::~Contact(){}
 
 std::string get_input(std::string prompt)
 {
