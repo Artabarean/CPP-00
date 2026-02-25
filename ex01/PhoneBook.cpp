@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 11:29:49 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/24 14:17:52 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/25 11:31:10 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,6 @@ bool	PhoneBook::add_contact(void)
 
 void    PhoneBook::display_contacts(Contact contacts[8])
 {
-    std::string temp_first_name;
-    std::string temp_last_name;
-    std::string temp_nickname;
     size_t      index;
 
     std::cout << std::setw(10) << "index" << "|"
@@ -56,19 +53,7 @@ void    PhoneBook::display_contacts(Contact contacts[8])
     for(size_t i = 0; i < max_contacts; i++)
     {
         index = i + 1;
-        temp_first_name = contacts[i].first_name;
-        temp_last_name = contacts[i].last_name;
-        temp_nickname = contacts[i].nickname;
-        if (temp_first_name.length() > 10)
-            temp_first_name = temp_first_name.substr(0, 9) + ".";
-        if (temp_last_name.length() > 10)
-            temp_last_name = temp_last_name.substr(0, 9) + ".";
-        if (temp_nickname.length() > 10)
-            temp_nickname = temp_nickname.substr(0, 9) + ".";
-        std::cout << std::setw(10) << index << "|"
-            << std::setw(10) << temp_first_name << "|"
-            << std::setw(10) << temp_last_name << "|" 
-            << std::setw(10) << temp_nickname << std::endl;
+        contacts[i].show_basic_info(index);
     }
 }
 
@@ -77,7 +62,7 @@ bool    PhoneBook::search_contact(void)
     std::string input;
 
     display_contacts(contacts);
-    while (1)
+    for(;;)
     {
         std::cout << "Please enter an index number:";
         if (!std::getline(std::cin, input))
@@ -97,7 +82,7 @@ bool    PhoneBook::search_contact(void)
             }
             else
             {
-                if (contacts[index - 1].first_name.empty())
+                if (contacts[index - 1].check_for_contact() == false)
                     std::cout << "This index doesn't have a contact assigned yet" << std::endl;
                 else
                     contacts[index - 1].show_contact_info();
