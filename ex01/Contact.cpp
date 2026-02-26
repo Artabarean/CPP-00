@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 12:30:34 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/25 12:36:41 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:27:26 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ std::string get_input(std::string prompt)
 		{
 			if (is_printable(input) == false)
 			{
-				error_message("character");
+				error_message("characters");
 				continue;
 			}
 			if (prompt == "phone number" && input.length() <= 9 && check_alpha(input) == true)

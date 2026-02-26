@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 12:10:10 by atabarea          #+#    #+#             */
-/*   Updated: 2026/02/18 14:41:57 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:19:08 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 #include <string>
 #include <cctype>
 
-typedef std::string string;
-	using std::cout;
-	using std::endl;
-
 int	main(int argc, char *argv[])
 {
 	if (argc < 2 )
 	{
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
 	for (int count = 1; count < argc; count++)
@@ -31,9 +27,9 @@ int	main(int argc, char *argv[])
 		for (size_t i = 0; i < temp.length(); i++)
 		{
 			temp[i] = std::toupper(argv[count][i]);
-			cout << temp[i];
+			std::cout << temp[i];
 		}
 	}
-	cout << endl;
+	std::cout << std::endl;
 	return (0);
 }
